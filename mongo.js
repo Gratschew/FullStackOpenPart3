@@ -15,7 +15,6 @@ mongoose.connect(url);
 const phoneNumberSchema = new mongoose.Schema({
   name: String,
   phoneNumber: String,
-  important: Boolean,
 });
 
 const PhoneNumber = mongoose.model("Phonebook", phoneNumberSchema);
@@ -33,7 +32,6 @@ if (process.argv.length < 4) {
   const phoneNumber = new PhoneNumber({
     name: name,
     phoneNumber: number,
-    important: true,
   });
   phoneNumber.save().then((result) => {
     console.log(`added ${name} number ${number} to phonebook`);
